@@ -1,0 +1,7 @@
+@use '../../../mixins.scss' as m;
+
+app-navbar,
+app-introduction,
+app-upcoming-dates {
+    @include m.d-flex-justify-align();
+}

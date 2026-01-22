@@ -3,8 +3,39 @@
 .introctions {
     @include m.d-flex-justify-align();
     padding: 20px;
+    max-width: 1440px;
+    width: 100%;
 
-    img {
-        width: clamp(300px, 50%, 450px);
+    // img {
+    //     width: clamp(300px, 50%, 450px);
+    //     box-shadow: inset 0px 0px 10px 10px #fffa;
+    // }
+    .image {
+        width: 50%;
+        aspect-ratio: 1;
+        background-image: url('../../../../public/assets/img/lars_fischer.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: inset 0px -20px 9px -10px #003365;
     }
+
+    .about_me {
+        width: 50%;
+    }
+}
+
+@media (max-width: 800px) {
+    .introctions {
+        flex-direction: column;
+
+        .image {
+            width: 80%;
+        }
+
+        .about_me {
+            width: 100%;
+        }
+    }
+
 }
