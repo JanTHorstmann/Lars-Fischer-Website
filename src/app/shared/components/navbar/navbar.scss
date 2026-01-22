@@ -1,0 +1,26 @@
+@use '../../../../mixins.scss' as m;
+
+header {
+    @include m.d-flex-justify-align($justify: space-between);
+    padding: 20px;
+    // border-bottom: 1px solid #860B10;
+    box-shadow: 0 4px 2px -2px #860B10;
+
+    h1 {
+        font-size: 32px;
+        margin: 0;
+    }
+
+    .navigationbar {
+        cursor: pointer;
+        @include m.d-flex-justify-align();
+        flex-direction: column;
+        gap: 10px;
+        height: 50px;
+
+        span {
+            border-bottom: 2px solid #FFFFFF;
+            width: 30px;
+        }
+    }
+}

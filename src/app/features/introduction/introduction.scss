@@ -1,0 +1,10 @@
+@use '../../../mixins.scss' as m;
+
+.introctions {
+    @include m.d-flex-justify-align();
+    padding: 20px;
+
+    img {
+        width: clamp(300px, 50%, 450px);
+    }
+}
