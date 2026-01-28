@@ -1,6 +1,23 @@
 <div class="content">
     <h3>Anstehende Termine:</h3>
-    <div>
-        <span>- Workshop 15.02.2026 ( Gitarre )</span>
+
+    <div class="dates">
+        <div class="dates__header">
+            <div>Was passiert</div>
+            <div>Ort</div>
+            <div>Instrument</div>
+            <div>Wann</div>
+            <div>Preis</div>
+        </div>
+
+        @for (date of dates(); track date.id) {
+        <div class="dates__row">
+            <div>{{ date.title }}</div>
+            <div>{{ date.location }}</div>
+            <div>{{ date.instrument_type }}</div>
+            <div>{{ date.date_start.toDate() | date:'dd.MM.yyyy' }}</div>
+            <div>{{ date.price }} €</div>
+        </div>
+        }
     </div>
 </div>

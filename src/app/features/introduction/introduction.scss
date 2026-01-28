@@ -1,6 +1,6 @@
 @use '../../../mixins.scss' as m;
 
-.introctions {
+.introduction {
     @include m.d-flex-justify-align();
     padding: 20px;
     max-width: 1440px;
@@ -33,7 +33,7 @@
 }
 
 @media (max-width: 800px) {
-    .introctions {
+    .introduction {
         flex-direction: column;
 
         .image {
