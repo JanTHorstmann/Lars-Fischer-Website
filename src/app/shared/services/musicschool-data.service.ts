@@ -6,7 +6,7 @@ import { UpcomingDate } from '../inerfaces/upcoming-date.interface';
 @Injectable({
   providedIn: 'root',
 })
-export class UpcomingDatesService {
+export class MusicSchoolDataService {
   private firestore = inject(Firestore);
 
   getUpcomingDates() {

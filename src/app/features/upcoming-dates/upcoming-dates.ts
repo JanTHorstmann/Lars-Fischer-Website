@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { UpcomingDatesService } from '../../shared/services/upcoming-dates.service';
+import { MusicSchoolDataService } from '../../shared/services/musicschool-data.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { DatePipe } from "@angular/common"
 
@@ -13,9 +13,9 @@ import { DatePipe } from "@angular/common"
 })
 export class UpcomingDates {
   
-  public upcomingDateService = inject(UpcomingDatesService)
+  public musicSchoolDataService = inject(MusicSchoolDataService)
   
-  dates = toSignal(this.upcomingDateService.getUpcomingDates(), {
+  dates = toSignal(this.musicSchoolDataService.getUpcomingDates(), {
     initialValue: []
   });
 }

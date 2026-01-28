@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UpcomingDatesService } from './upcoming-dates.service';
+import { UpcomingDatesService } from './musicschool-data.service';
 
 describe('UpcomingDatesService', () => {
   let service: UpcomingDatesService;
