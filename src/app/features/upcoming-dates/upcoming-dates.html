@@ -10,7 +10,7 @@
             <div>Preis</div>
         </div>
 
-        @for (date of dates(); track date.id) {
+        @for (date of musicSchoolDataService.upcomingdates(); track date.id) {
         <div class="dates__row">
             <div>{{ date.title }}</div>
             <div>{{ date.location }}</div>
