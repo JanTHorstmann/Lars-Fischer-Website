@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MusicSchoolDataService } from '../../shared/services/musicschool-data.service';
 
 @Component({
   selector: 'app-introduction',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './introduction.scss',
 })
 export class Introduction {
-
+  public musicSchoolDataService = inject(MusicSchoolDataService)
+  introducing = this.musicSchoolDataService.introducingMusicSchool;
 }

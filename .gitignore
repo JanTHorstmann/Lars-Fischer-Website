@@ -38,6 +38,7 @@ testem.log
 /typings
 __screenshots__/
 /src/environments
+/src/app/delete_this
 
 # System files
 .DS_Store

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
+import { MusicSchoolDataService } from '../../services/musicschool-data.service';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -7,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.scss',
 })
 export class Navbar {
-
+public musicSchoolDataService = inject(MusicSchoolDataService)
+commonInfo = this.musicSchoolDataService.commonInformationMusicSchool;
 }

@@ -14,4 +14,5 @@ import { DatePipe } from "@angular/common"
 export class UpcomingDates {
   
   public musicSchoolDataService = inject(MusicSchoolDataService)
+  dates = this.musicSchoolDataService.upcomingDates;
 }
