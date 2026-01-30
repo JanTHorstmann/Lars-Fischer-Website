@@ -15,7 +15,14 @@
             <div>{{ date.title }}</div>
             <div>{{ date.location }}</div>
             <div>{{ date.instrument_type }}</div>
-            <div>{{ date.date_start.toDate() | date:'dd.MM.yyyy' }}</div>
+            <div>
+                {{
+                formatDateRange(
+                date.date_start.toDate(),
+                date.date_end.toDate()
+                )
+                }}
+            </div>
             <div>{{ date.price }} €</div>
         </div>
         }
