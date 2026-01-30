@@ -27,6 +27,7 @@
         padding: 10px 0;
         div {
             min-width: 320px;
+            max-width: 320px;
         }
     }
 
@@ -35,6 +36,21 @@
     }
 }
 
+
+.width-100 {
+    max-width: 100px !important;
+    min-width: 100px !important;
+}
+
+.width-150 {
+    max-width: 150px !important;
+    min-width: 150px !important;
+}
+
+.width-200 {
+    max-width: 200px !important;
+    min-width: 200px !important;
+}
 
 @media (max-width: 800px) {
     .content {

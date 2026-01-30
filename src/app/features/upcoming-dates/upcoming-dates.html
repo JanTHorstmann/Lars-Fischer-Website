@@ -4,17 +4,17 @@
     <div class="dates">
         <div class="dates__header">
             <div>Was passiert</div>
-            <div>Ort</div>
-            <div>Instrument</div>
+            <div class="width-200">Ort</div>
+            <div class="width-150">Instrument</div>
             <div>Wann</div>
-            <div>Preis</div>
+            <div class="width-100">Preis</div>
         </div>
 
         @for (date of dates(); track date.id) {
         <div class="dates__row">
             <div>{{ date.title }}</div>
-            <div>{{ date.location }}</div>
-            <div>{{ date.instrument_type }}</div>
+            <div class="width-200">{{ date.location }}</div>
+            <div class="width-150">{{ date.instrument_type }}</div>
             <div>
                 {{
                 formatDateRange(
@@ -23,7 +23,7 @@
                 )
                 }}
             </div>
-            <div>{{ date.price }} €</div>
+            <div class="width-100">{{ date.price }} €</div>
         </div>
         }
     </div>

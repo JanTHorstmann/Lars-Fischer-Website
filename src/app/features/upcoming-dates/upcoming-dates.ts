@@ -5,9 +5,7 @@ import { DatePipe } from "@angular/common"
 
 @Component({
   selector: 'app-upcoming-dates',
-  imports: [
-    DatePipe,
-  ],
+  imports: [],
   templateUrl: './upcoming-dates.html',
   styleUrl: './upcoming-dates.scss',
 })

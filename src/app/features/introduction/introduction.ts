@@ -10,4 +10,5 @@ import { MusicSchoolDataService } from '../../shared/services/musicschool-data.s
 export class Introduction {
   public musicSchoolDataService = inject(MusicSchoolDataService)
   introducing = this.musicSchoolDataService.introducingMusicSchool;
+  ownerData = this.musicSchoolDataService.ownerData;
 }

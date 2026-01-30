@@ -7,5 +7,15 @@
         <span>{{ introducing()?.field1 }}</span>
         <span>{{ introducing()?.field2 }}</span>
         <span>{{ introducing()?.field3 }}</span>
+        <div class="contact_information">
+            <div class="information">
+                <span>E-Mail:</span>
+                <a href="mailto:{{ ownerData()?.email }}">{{ ownerData()?.email }}</a>
+            </div>
+            <div class="information">
+                <span>Tel:</span>
+                <a href="tel:+">{{ ownerData()?.tel }}</a>
+            </div>
+        </div>
     </div>
 </div>

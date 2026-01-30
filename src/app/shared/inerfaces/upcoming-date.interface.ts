@@ -7,6 +7,6 @@ export interface UpcomingDate {
     date_end: Timestamp;
     location: string;
     instrument_type: string;
-    price: number;
+    price: string;
     currency: string;
 }
