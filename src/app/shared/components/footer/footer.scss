@@ -6,6 +6,7 @@ footer {
     box-shadow: 0 4px 2px -2px #860B10;
     max-width: 1440px;
     width: 100%;
+
     h4 {
         margin: 0;
     }
@@ -15,9 +16,37 @@ footer {
         color: white;
     }
 
+    .imprint_privacy_policy {
+        @include m.d-flex-justify-align();
+        gap: 10px;
+    }
+
     .social_media {
         @include m.d-flex-justify-align();
         gap: 10px;
+
+        a {
+            width: 32px;
+            height: 32px;
+            background-size: contain;
+        }
+
+        .youtube {
+            background-image: url('../../../../../public/assets/img/youtube.png');
+        }
+
+        .tiktok {
+            background-image: url('../../../../../public/assets/img/tiktok.png');
+        }
+
+        .instagram {
+            background-image: url('../../../../../public/assets/img/instagram.png');
+        }
+
+        .facebook {
+            background-image: url('../../../../../public/assets/img/facebook.png');
+        }
+
         img {
             width: 32px;
         }

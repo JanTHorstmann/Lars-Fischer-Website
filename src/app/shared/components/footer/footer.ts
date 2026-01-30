@@ -10,4 +10,5 @@ import { MusicSchoolDataService } from '../../services/musicschool-data.service'
 export class Footer {
   public musicSchoolDataService = inject(MusicSchoolDataService)
   commonInfo = this.musicSchoolDataService.commonInformationMusicSchool;
+  ownerData =this.musicSchoolDataService.ownerData;
 }

@@ -1,21 +1,13 @@
 <footer>
     <h4>{{ commonInfo()?.name }}</h4>
-    <div class="social_media">
+    <div class="imprint_privacy_policy">
         <a href="/imprint">Impressum</a>
         <a href="/privacy-policy">Privacy Policy</a>
     </div>
     <div class="social_media">
-        <a href="">
-            <img src="assets/img/youtube.png" alt="">
-        </a>
-        <a href="">
-            <img src="assets/img/tiktok.png" alt="">
-        </a>
-        <a href="">
-            <img src="assets/img/instagram.png" alt="">
-        </a>
-        <a href="">
-            <img src="assets/img/facebook.png" alt="">
-        </a>
+        <a class="youtube" href="{{ ownerData()?.youtube_link }}" target="_blank"></a>
+        <a class="tiktok" href="{{ ownerData()?.tiktok_link }}" target="_blank"></a>
+        <a class="instagram" href="{{ ownerData()?.instagram_link }}" target="_blank"></a>
+        <a class="facebook" href="{{ ownerData()?.facebook_link }}" target="_blank"></a>
     </div>
 </footer>
