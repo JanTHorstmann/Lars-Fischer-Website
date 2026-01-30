@@ -1,0 +1,25 @@
+@use '../../../../mixins.scss' as m;
+
+footer {
+    @include m.d-flex-justify-align($justify: space-between);
+    padding: 20px;
+    box-shadow: 0 4px 2px -2px #860B10;
+    max-width: 1440px;
+    width: 100%;
+    h4 {
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .social_media {
+        @include m.d-flex-justify-align();
+        gap: 10px;
+        img {
+            width: 32px;
+        }
+    }
+}
