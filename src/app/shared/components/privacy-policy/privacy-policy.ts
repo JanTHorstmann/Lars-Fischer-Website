@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { MusicSchoolDataService } from '../../services/musicschool-data.service';
 import { Navbar } from "../navbar/navbar";
+import { Footer } from "../footer/footer";
 
 @Component({
   selector: 'app-privacy-policy',
-  imports: [Navbar],
+  imports: [Navbar, Footer],
   templateUrl: './privacy-policy.html',
   styleUrl: './privacy-policy.scss',
 })
