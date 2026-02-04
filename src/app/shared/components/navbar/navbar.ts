@@ -1,6 +1,5 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MusicSchoolDataService } from '../../services/musicschool-data.service';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
