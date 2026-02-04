@@ -4,7 +4,7 @@ export interface OwnerInterface {
     tel: string;
     email: string;
     street: string;
-    county: string;
+    country: string;
     facebook_link: string;
     youtube_link: string;
     tiktok_link: string;
