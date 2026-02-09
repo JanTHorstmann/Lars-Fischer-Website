@@ -11,20 +11,17 @@
         </div>
 
         @for (date of dates(); track date.id) {
-        <div class="dates__row">
-            <div>{{ date.title }}</div>
-            <div class="width-200">{{ date.location }}</div>
-            <div class="width-150">{{ date.instrument_type }}</div>
-            <div>
-                {{
-                formatDateRange(
-                date.date_start.toDate(),
-                date.date_end.toDate()
-                )
-                }}
-            </div>
-            <div class="width-100">{{ date.price }} {{ date.currency }}</div>
-        </div>
+            @if (date.is_Active) {
+                <div class="dates__row">
+                    <div>{{ date.title }}</div>
+                    <div class="width-200">{{ date.location }}</div>
+                    <div class="width-150">{{ date.instrument_type }}</div>
+                    <div>
+                        {{ formatDateRange(date.date_start.toDate(), date.date_end.toDate()) }}
+                    </div>
+                    <div class="width-100">{{ date.price }} {{ date.currency }}</div>
+                </div>
+            }
         }
     </div>
 </div>

@@ -9,4 +9,5 @@ export interface UpcomingDate {
     instrument_type: string;
     price: string;
     currency: string;
+    is_Active: boolean;
 }
