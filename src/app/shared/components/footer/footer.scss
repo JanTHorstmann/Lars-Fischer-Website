@@ -3,7 +3,6 @@
 footer {
     @include m.d-flex-justify-align($justify: space-between);
     padding: 20px;
-    box-shadow: 0 4px 2px -2px #860B10;
     max-width: 1440px;
     width: 100%;
 
@@ -49,6 +48,17 @@ footer {
 
         img {
             width: 32px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    footer {
+        flex-direction: column-reverse;
+        gap: 15px;
+
+        .social_media {
+            gap: 20px;
         }
     }
 }
