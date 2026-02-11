@@ -9,15 +9,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
 import { environment } from '../environments/environment';
 
-const firebaseConfig = {
-  apiKey: environment.apiKey,
-  authDomain: environment.authDomain,
-  projectId: environment.projectId,
-  storageBucket: environment.storageBucket,
-  messagingSenderId: environment.messagingSenderId,
-  appId: environment.appId,
-  measurementId: environment.measurementId
-};
+const firebaseConfig = environment.firebase;
 
 
 export const appConfig: ApplicationConfig = {
