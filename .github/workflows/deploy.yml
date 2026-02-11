@@ -1,0 +1,35 @@
+name: Build and Deploy to All-Inkl FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Node installieren
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Abhängigkeiten installieren
+        run: npm install
+
+      - name: Angular Build
+        run: npm run build -- --configuration production
+
+      - name: Deploy zu All-Inkl via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist/MusikschuleAmadeus/browser/
+          server-dir: ${{ secrets.FTP_TARGET_DIR }}
+          dangerous-clean-slate: true
