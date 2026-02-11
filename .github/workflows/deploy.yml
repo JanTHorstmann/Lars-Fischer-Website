@@ -36,5 +36,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/musikschule-amadeus/browser/
-          server-dir: /musikschule.rockin-amadeus.de/
+          server-dir: /www/htdocs/w01eed99/musikschule.rockin-amadeus.de/
           dangerous-clean-slate: true
