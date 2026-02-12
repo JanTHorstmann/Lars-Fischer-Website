@@ -19,12 +19,7 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: npm install
-
-      - name: Create environment file
-        run: |
-          mkdir -p src/environments
-          echo "${{ secrets.ANGULAR_ENVIRONMENT }}" > src/environments/environment.ts
+        run: npm install      
 
       - name: Build Angular
         run: npm run build -- --configuration production
