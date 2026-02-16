@@ -1,0 +1,12 @@
+@use '../../../mixins.scss' as m;
+
+.content {
+    padding: 20px 80px;
+    max-width: 1440px;
+    width: 100%;
+    border-bottom: 2px solid #860B10;
+    
+    h3 {
+        margin: 0 0 10px 0;
+    }
+}
