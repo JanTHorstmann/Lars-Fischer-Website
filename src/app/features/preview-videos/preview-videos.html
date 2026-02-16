@@ -1,8 +1,11 @@
-<div class="preview_video_content">
-    @for (videoID of videos(); track $index) {
-    <iframe [src]="musicSchoolDataService.getYoutubeUrl(videoID.videoID) | safeUrl"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    }
+<div class="content">
+<h3>Einstieger Tutorials</h3>
+    <div class="preview_video_content">
+        @for (videoID of videos(); track $index) {
+            <iframe [src]="musicSchoolDataService.getYoutubeUrl(videoID.videoID) | safeUrl"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        }
+    </div>
 </div>

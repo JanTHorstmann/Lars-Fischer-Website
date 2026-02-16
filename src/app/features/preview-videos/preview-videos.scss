@@ -1,36 +1,50 @@
 @use '../../../mixins.scss' as m;
 
-.preview_video_content {
+.content {
     padding: 20px 80px;
     max-width: 1440px;
     width: 100%;
-    border-top: 2px solid #860B10;
-    overflow-x: auto;
-    @include m.d-flex-justify-align($justify:flex-start);
+    border-bottom: 2px solid #860B10;
 
-    gap: 10px;
-    
-    iframe {
-        width: 500px;
-        aspect-ratio: 2;
-        border-radius: 10px;
+    h3 {
+        margin: 0 0 10px 0;
+    }
+
+    .preview_video_content {
+
+        overflow-x: auto;
+        @include m.d-flex-justify-align($justify: flex-start);
+
+        gap: 10px;
+
+        iframe {
+            width: 500px;
+            aspect-ratio: 2;
+            border-radius: 10px;
+        }
     }
 }
 
 @media(max-width: 800px) {
-    .preview_video_content {
+    .content {
         padding: 20px;
 
-        iframe {
-            width: 300px;
+        .preview_video_content {
+
+            iframe {
+                width: 300px;
+            }
         }
     }
 }
 
 @media(max-width: 400px) {
-    .preview_video_content {
-        iframe {
-            width: 260px;
+    .content {
+        padding: 20px 10px;
+        .preview_video_content {
+            iframe {
+                width: 260px;
+            }
         }
     }
 }

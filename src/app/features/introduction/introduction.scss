@@ -2,9 +2,11 @@
 
 .introduction {
     @include m.d-flex-justify-align();
-    padding: 20px;
+    padding: 20px 80px;
     max-width: 1440px;
     width: 100%;
+    border-bottom: 2px solid #860B10;
+
 
     // img {
     //     width: clamp(300px, 50%, 450px);
@@ -53,6 +55,7 @@
 @media (max-width: 800px) {
     .introduction {
         flex-direction: column;
+        padding: 20px;
 
         .image {
             width: 80%;
