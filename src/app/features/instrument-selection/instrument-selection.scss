@@ -5,8 +5,31 @@
     max-width: 1440px;
     width: 100%;
     border-bottom: 2px solid #860B10;
-    
+
     h3 {
         margin: 0 0 10px 0;
+    }
+
+    .instrument_selection {
+        @include m.d-flex-justify-align($align: flex-start);
+        flex-direction: column;
+        gap: 20px;
+
+        .instruments {
+            @include m.d-flex-justify-align();
+            flex-wrap: wrap;
+            gap: 50px;
+            width: 100%;
+
+            img {
+                height: 150px;
+            }
+        }
+    }
+}
+
+@media(max-width: 800px) {
+    .content {
+        padding: 20px;
     }
 }

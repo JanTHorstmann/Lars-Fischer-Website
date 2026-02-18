@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class InstrumentSelection {
 
+  instruments = ['guitare', 'bass', 'drums',]
+
 }

@@ -2,5 +2,19 @@
     <h3>
         <p>Diese Instrumente kannst du bei mir lernen</p>
     </h3>
+    <div class="instrument_selection">
+        <div class="instruments">
+            @for (instrument of instruments; track $index) {
+                <div class="instrument">
+                    <img src="assets/img/{{ instrument }}_invert.png" alt="">
+                    <!-- <span>{{ instrument.toCapitalize() }}</span> -->
+                </div>
+            }
+        </div>
+        <div class="instruments">
+                <img src="assets/img/keyboard_invert.png" alt="">
+            
+        </div>
+    </div>
 
 </div>
