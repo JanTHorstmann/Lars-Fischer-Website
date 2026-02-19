@@ -1,0 +1,12 @@
+@use '../../../../mixins.scss' as m;
+
+.imprint_container {
+    padding: 20px;
+    word-break: break-all;
+    max-width: 1440px;
+    width: 100%;
+}
+
+a {
+    color: #a7a7a7;
+}
