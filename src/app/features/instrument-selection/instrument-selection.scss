@@ -21,8 +21,22 @@
             gap: 50px;
             width: 100%;
 
-            img {
-                height: 150px;
+            .instrument {
+                @include m.d-flex-justify-align();
+                flex-direction: column;
+                gap: 10px;
+                
+                img {
+                    height: 150px;
+                    cursor: pointer;
+                }
+            }
+
+            .keyboard {
+
+                img {
+                    height: 100px;
+                }
             }
         }
     }

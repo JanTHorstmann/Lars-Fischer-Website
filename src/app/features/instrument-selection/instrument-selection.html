@@ -6,14 +6,16 @@
         <div class="instruments">
             @for (instrument of instruments; track $index) {
                 <div class="instrument">
-                    <img src="assets/img/{{ instrument }}_invert.png" alt="">
-                    <!-- <span>{{ instrument.toCapitalize() }}</span> -->
+                    <img src="assets/img/{{ instrument }}_invert.png" alt="" (click)="selectInstrument(instrument)">
+                    <span>{{ toCapitalize(instrument) }}</span>
                 </div>
             }
         </div>
         <div class="instruments">
-                <img src="assets/img/keyboard_invert.png" alt="">
-            
+            <div class="instrument keyboard">
+                <img src="assets/img/keyboard_invert.png" alt="" (click)="selectInstrument('keyboard')">
+                <span>Keyboard</span>            
+            </div>
         </div>
     </div>
 

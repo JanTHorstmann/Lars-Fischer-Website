@@ -8,6 +8,16 @@ import { Component } from '@angular/core';
 })
 export class InstrumentSelection {
 
-  instruments = ['guitare', 'bass', 'drums',]
+  instruments = ['gitarre', 'bass', 'schlagzeug',]
+
+  toCapitalize(str: string) {
+    return str.toLowerCase()
+		.split(' ')
+		.map(word => word.charAt(0).toUpperCase() + word.substr(1))
+  }
+
+  selectInstrument(instrument: string) {
+    console.log('Choosen Instrument:', instrument);    
+  }
 
 }
