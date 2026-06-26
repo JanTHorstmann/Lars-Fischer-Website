@@ -62,7 +62,7 @@ export class MusicSchoolDataService {
   }
 
   private getPreviewVideo(): Observable<PreviewVideoInterface[]> {
-    const ref = collection(this.firestore, 'preview_vidoes');
+    const ref = collection(this.firestore, 'preview_videos');
     return collectionData(ref, { idField: 'id' }) as Observable<PreviewVideoInterface[]>;
   }
 
