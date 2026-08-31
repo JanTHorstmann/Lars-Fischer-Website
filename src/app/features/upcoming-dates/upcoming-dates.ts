@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { MusicSchoolDataService } from '../../shared/services/musicschool-data.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { DatePipe } from "@angular/common"
@@ -12,7 +12,10 @@ import { DatePipe } from "@angular/common"
 export class UpcomingDates {
 
   public musicSchoolDataService = inject(MusicSchoolDataService)
-  dates = this.musicSchoolDataService.upcomingDates;
+  dates = computed(() =>
+    this.musicSchoolDataService.upcomingDates()
+      .filter(date => date.is_Active)
+  );
 
   formatDateRange(start: Date, end: Date): string {
     const sameDay =

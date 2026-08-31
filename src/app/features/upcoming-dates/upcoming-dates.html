@@ -1,7 +1,9 @@
 <div class="content">
     <h3>Anstehende Termine:</h3>
 
+    @if (dates().length > 0) {
     <div class="dates">
+
         <div class="dates__header">
             <div>Was passiert</div>
             <div class="width-200">Ort</div>
@@ -11,17 +13,28 @@
         </div>
 
         @for (date of dates(); track date.id) {
-            @if (date.is_Active) {
-                <div class="dates__row">
-                    <div>{{ date.title }}</div>
-                    <div class="width-200">{{ date.location }}</div>
-                    <div class="width-150">{{ date.instrument_type }}</div>
-                    <div>
-                        {{ formatDateRange(date.date_start.toDate(), date.date_end.toDate()) }}
-                    </div>
-                    <div class="width-100">{{ date.price }} {{ date.currency }}</div>
-                </div>
-            }
+        <div class="dates__row">
+            <div>{{ date.title }}</div>
+            <div class="width-200">{{ date.location }}</div>
+            <div class="width-150">{{ date.instrument_type }}</div>
+            <div>
+                {{ formatDateRange(
+                date.date_start.toDate(),
+                date.date_end.toDate()
+                ) }}
+            </div>
+            <div class="width-100">
+                {{ date.price }} {{ date.currency }}
+            </div>
+        </div>
         }
+
     </div>
+    } @else {
+    <div class="dates">
+        <div class="dates__row">
+            <div>Keine anstehenden Termine</div>
+        </div>
+    </div>
+    }
 </div>
