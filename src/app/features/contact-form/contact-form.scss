@@ -1,0 +1,183 @@
+@use '../../../mixins.scss' as m;
+
+.content {
+    padding: 20px 80px;
+    max-width: 1440px;
+    width: 100%;
+    border-bottom: 2px solid #860B10;
+
+    h3 {
+        margin: 0 0 10px 0;
+    }
+
+    .contact {
+        width: 100%;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+    }
+
+
+    .form-field {
+        position: relative;
+        width: clamp(250px, 80vw, 700px);
+
+        input.ng-invalid.ng-touched,
+        select.ng-invalid.ng-touched,
+        textarea.ng-invalid.ng-touched {
+            border-color: #ff8a8f;
+        }
+
+        input,
+        select,
+        textarea {
+            box-sizing: border-box;
+            width: 100%;
+
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-radius: 10px;
+
+            background-color: #00294f;
+            color: white;
+
+            font-size: 16px;
+            outline: none;
+
+            transition: border-color 0.2s ease;
+        }
+
+        .error-message {
+            display: block;
+
+            margin-top: 5px;
+            padding-left: 10px;
+
+            font-size: 12px;
+
+            color: #ff8a8f;
+        }
+
+
+        input,
+        select {
+            height: 30px;
+            padding: 0 12px;
+        }
+
+
+        textarea {
+            min-height: 150px;
+            padding: 15px 12px;
+            resize: vertical;
+        }
+
+
+        label {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+
+            padding: 0 5px;
+
+            transform: translateY(-50%);
+
+            color: rgba(255, 255, 255, 0.65);
+            background-color: #00294f;
+
+            pointer-events: none;
+
+            transition:
+                top 0.2s ease,
+                transform 0.2s ease,
+                font-size 0.2s ease,
+                color 0.2s ease;
+        }
+
+
+        /* Input Floating Label */
+
+        input:focus+label,
+        input:not(:placeholder-shown)+label {
+            top: 0;
+            transform: translateY(-50%);
+            font-size: 12px;
+            color: white;
+        }
+
+
+        /* Select Floating Label */
+
+        select:focus+label,
+        select.has-value+label {
+            top: 0;
+            transform: translateY(-50%);
+            font-size: 12px;
+            color: white;
+        }
+
+
+        /* Textarea Label ist immer oben */
+
+        textarea+label {
+            top: 0;
+            transform: translateY(-50%);
+            font-size: 12px;
+            color: white;
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+
+
+        select {
+            appearance: none;
+            cursor: pointer;
+
+            option {
+                background-color: #00294f;
+                color: white;
+            }
+        }
+    }
+
+
+    button {
+        width: clamp(250px, 60vw, 500px);
+        height: 30px;
+
+        border: none;
+        border-radius: 10px;
+
+        cursor: pointer;
+
+        background-color: #860B10;
+        color: white;
+
+        transition: 0.2s ease;
+
+        &:hover:not(:disabled) {
+            transform: translateY(-2px);
+            filter: brightness(1.15);
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+
+}
+
+@media(max-width: 800px) {
+    .content {
+        padding: 20px;
+    }
+}

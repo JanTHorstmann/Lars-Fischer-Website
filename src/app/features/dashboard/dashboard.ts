@@ -5,6 +5,7 @@ import { UpcomingDates } from '../upcoming-dates/upcoming-dates';
 import { Footer } from '../../shared/components/footer/footer';
 import { PreviewVideos } from "../preview-videos/preview-videos";
 import { InstrumentSelection } from "../instrument-selection/instrument-selection";
+import { ContactForm } from '../contact-form/contact-form';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,8 @@ import { InstrumentSelection } from "../instrument-selection/instrument-selectio
     UpcomingDates,
     Footer,
     PreviewVideos,
-    InstrumentSelection
+    InstrumentSelection,
+    ContactForm,
 ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',

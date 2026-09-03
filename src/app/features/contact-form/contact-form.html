@@ -1,1 +1,101 @@
-<p>contact-form works!</p>
+<div class="content">
+
+    <div class="contact">
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+            <!-- Name -->
+            <div class="form-field">
+                <input type="text" id="name" formControlName="name" placeholder=" ">
+                <label for="name">Name</label>
+
+                @if (
+                contactForm.controls.name.invalid &&
+                contactForm.controls.name.touched
+                ) {
+                <span class="error-message">
+                    Bitte gib deinen Namen ein.
+                </span>
+                }
+            </div>
+
+
+            <!-- E-Mail -->
+            <div class="form-field">
+                <input type="email" id="email" formControlName="email" placeholder=" ">
+                <label for="email">E-Mail</label>
+
+                @if (
+                contactForm.controls.email.invalid &&
+                contactForm.controls.email.touched
+                ) {
+                @if (contactForm.controls.email.hasError('required')) {
+                <span class="error-message">
+                    Bitte gib deine E-Mail-Adresse ein.
+                </span>
+                }
+
+                @if (contactForm.controls.email.hasError('email')) {
+                <span class="error-message">
+                    Bitte gib eine gültige E-Mail-Adresse ein.
+                </span>
+                }
+                }
+            </div>
+
+
+            <!-- Instrument -->
+            <div class="form-field">
+                <select id="instrument" formControlName="instrument"
+                    [class.has-value]="contactForm.controls.instrument.value">
+                    <option value="" disabled hidden></option>
+                    <option value="Gesang">Gesang</option>
+                    <option value="Gitarre">Gitarre</option>
+                    <option value="Bass">Bass</option>
+                    <option value="Schlagzeug">Schlagzeug</option>
+                    <option value="Keyboard">Keyboard</option>
+                    <option value="Nicht dabei">Nicht dabei</option>
+                </select>
+
+                <label for="instrument">Instrument</label>
+
+                @if (
+                contactForm.controls.instrument.invalid &&
+                contactForm.controls.instrument.touched
+                ) {
+                <span class="error-message">
+                    Bitte wähle ein Instrument aus.
+                </span>
+                }
+            </div>
+
+
+            <!-- Nachricht -->
+            <div class="form-field textarea-field">
+                <textarea id="message" formControlName="message" placeholder=" "></textarea>
+
+                <label for="message">
+                    {{ messageLabel }}
+                </label>
+
+                @if (
+                contactForm.controls.message.invalid &&
+                contactForm.controls.message.touched
+                ) {
+                <span class="error-message">
+                    Bitte teile uns mit, welches Instrument du lernen möchtest.
+                </span>
+                }
+            </div>
+
+
+            <button type="submit">
+                Nachricht senden
+            </button>
+
+        </form>
+
+    </div>
+
+
+</div>
