@@ -1,5 +1,5 @@
 <div class="content">
-<h3>Einstieger Tutorials</h3>
+<h2>Einsteiger-Tutorials</h2>
     <div class="preview_video_content">
         @for (videoID of videos(); track $index) {
             <iframe [src]="musicSchoolDataService.getYoutubeUrl(videoID.videoID) | safeUrl"

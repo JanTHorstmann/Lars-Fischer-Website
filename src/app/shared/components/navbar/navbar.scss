@@ -15,6 +15,11 @@ header {
         color: #FFFFFF;
     }
 
+    h1 {
+        margin: 0;
+        word-wrap: normal;
+    }
+
     .navigationbar {
         cursor: pointer;
         @include m.d-flex-justify-align();
@@ -25,6 +30,16 @@ header {
         span {
             border-bottom: 2px solid #FFFFFF;
             width: 30px;
+        }
+    }
+}
+
+@media(max-width: 400px) {
+    header {
+
+        h1 {
+            font-size: 26px;
+            
         }
     }
 }

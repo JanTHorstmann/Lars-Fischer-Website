@@ -1,20 +1,18 @@
 <div class="content">
-    <h3>
-        <p>Diese Instrumente kannst du bei mir lernen</p>
-    </h3>
+    <h2>Diese Instrumente kannst du bei mir lernen</h2>
     <div class="instrument_selection">
         <div class="instruments">
             @for (instrument of instruments; track $index) {
-                <div class="instrument">
-                    <img src="assets/img/{{ instrument }}_invert.png" alt="" (click)="selectInstrument(instrument)">
-                    <span>{{ toCapitalize(instrument) }}</span>
-                </div>
+            <div class="instrument">
+                <img src="assets/img/{{ instrument }}_invert.png" alt="" (click)="selectInstrument(instrument)">
+                <h3>{{ toCapitalize(instrument) }}</h3>
+            </div>
             }
         </div>
         <div class="instruments">
             <div class="instrument keyboard">
                 <img src="assets/img/keyboard_invert.png" alt="" (click)="selectInstrument('keyboard')">
-                <span>Keyboard</span>            
+                <h3>Keyboard</h3>
             </div>
         </div>
     </div>
