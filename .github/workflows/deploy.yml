@@ -19,10 +19,13 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: npm install      
+        run: npm install
 
       - name: Build Angular
         run: npm run build -- --configuration production
+
+      - name: Copy PHP mail endpoint
+        run: cp send-mail.php dist/MusikschuleAmadeus/browser/send-mail.php
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4

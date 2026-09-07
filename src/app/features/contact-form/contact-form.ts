@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { inject, signal } from '@angular/core';
 @Component({
   selector: 'app-contact-form',
   imports: [
@@ -9,6 +11,10 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './contact-form.scss',
 })
 export class ContactForm {
+
+  private http = inject(HttpClient);
+  sendSuccess = signal(false);
+  sendError = signal(false);
 
   contactForm = new FormGroup({
     name: new FormControl('', {
@@ -30,6 +36,11 @@ export class ContactForm {
     }),
 
     message: new FormControl('', {
+      nonNullable: true,
+    }),
+
+    // Honeypot
+    company: new FormControl('', {
       nonNullable: true,
     }),
   });
@@ -65,35 +76,37 @@ export class ContactForm {
 
 
   onSubmit() {
+
+    // Alle Felder als "berührt" markieren
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       return;
     }
 
-    const { name, email, instrument, message } =
-      this.contactForm.getRawValue();
+    console.log(this.contactForm.value);
 
-    const subject = `${name} möchte ${instrument} lernen`;
+    this.http.post(
+      '/send-mail.php',
+      this.contactForm.value
+    ).subscribe({
 
-    let emailMessage =
-      `${name} hat Interesse daran, ${instrument} zu lernen.
+      next: () => {
 
-Mache einen Termin mit ihm aus und antworte unter folgender E-Mail-Adresse:
+        this.sendSuccess.set(true);
+        this.sendError.set(false);
 
-${email}`;
+        this.contactForm.reset();
+      },
 
+      error: (error) => {
 
-    if (message.trim()) {
-      emailMessage += `
+        console.error(error);
 
-${name} hat folgende Nachricht hinterlassen:
+        this.sendError.set(true);
+        this.sendSuccess.set(false);
+      }
 
-${message}`;
-    }
-
-
-    console.log('Betreff:', subject);
-    console.log('Nachricht:', emailMessage);
+    });
   }
 
 }

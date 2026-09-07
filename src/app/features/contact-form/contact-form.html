@@ -93,10 +93,30 @@
                 }
             </div>
 
+            <!-- Honeypot Spam-Schutz -->
+            <div class="honeypot" aria-hidden="true">
+                <label for="company">Firma</label>
+                <input type="text" id="company" formControlName="company" tabindex="-1" autocomplete="off">
+            </div>
+
 
             <button type="submit">
                 Nachricht senden
             </button>
+
+            @if (sendSuccess()) {
+            <p class="success-message">
+                Vielen Dank! Deine Nachricht wurde erfolgreich versendet.
+                Du erhältst in Kürze eine Bestätigung per E-Mail.
+            </p>
+            }
+
+            @if (sendError()) {
+            <p class="error-message">
+                Leider konnte deine Nachricht nicht versendet werden.
+                Bitte versuche es später erneut.
+            </p>
+            }
 
         </form>
 
