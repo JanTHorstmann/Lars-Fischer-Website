@@ -95,8 +95,8 @@
 
             <!-- Honeypot Spam-Schutz -->
             <div class="honeypot" aria-hidden="true">
-                <label for="company">Firma</label>
-                <input type="text" id="company" formControlName="company" tabindex="-1" autocomplete="off">
+                <label for="contact_check">Bitte leer lassen</label>
+                <input type="text" id="contact_check" formControlName="contact_check" tabindex="-1" autocomplete="off">
             </div>
 
 
@@ -107,7 +107,8 @@
             @if (sendSuccess()) {
             <p class="success-message">
                 Vielen Dank! Deine Nachricht wurde erfolgreich versendet.
-                Du erhältst in Kürze eine Bestätigung per E-Mail.
+                Du erhältst in Kürze eine Bestätigung per E-Mail. 
+                Prüfe gegebenenfalls den Spamordner
             </p>
             }
 

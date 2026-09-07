@@ -54,7 +54,7 @@ if ($instrument === 'Nicht dabei' && empty($message)) {
 }
 
 // Spam-Schutz: Honeypot muss leer bleiben
-if (!empty($data['company'])) {
+if (!empty($data['contact_check'])) {
     http_response_code(400);
 
     echo json_encode([

@@ -40,7 +40,7 @@ export class ContactForm {
     }),
 
     // Honeypot
-    company: new FormControl('', {
+    contact_check: new FormControl('', {
       nonNullable: true,
     }),
   });
