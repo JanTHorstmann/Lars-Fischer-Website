@@ -70,7 +70,7 @@ if (!empty($data['contact_check'])) {
 // KONFIGURATION
 // ==========================================
 
-$to = 'JanHorstmann@yahoo.de';
+$to = 'fireball-777@gmx.de';
 
 $from = 'kontakt@rockin-amadeus.de';
 
