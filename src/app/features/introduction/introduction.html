@@ -3,7 +3,8 @@
     <div class="image"></div>
 
     <div class="about_me">
-        <h2>Über Mich</h2>
+            <h1>Musikunterricht in Wiesmoor und Umgebung</h1>
+        <h2>Über mich</h2>
         <span>{{ introducing()?.field1 }}</span>
         <span>{{ introducing()?.field2 }}</span>
         <span>{{ introducing()?.field3 }}</span>
@@ -14,7 +15,7 @@
             </div>
             <div class="information">
                 <span>Tel:</span>
-                <a href="tel:+">{{ ownerData()?.tel }}</a>
+                <a href="tel:{{ ownerData()?.tel }}">{{ ownerData()?.tel }}</a>
             </div>
         </div>
     </div>
